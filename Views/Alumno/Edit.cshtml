@@ -1,0 +1,46 @@
+@using Parcial1.ViewModels;
+@model EditViewModel
+@{
+
+}
+
+<form method="post" asp-action="Edit" asp-controller="Alumno">
+      <div>
+                <input type="hidden" asp-for="alumno.Id" readonly>
+            </div>
+    <div class="mb-3">
+        <label asp-for="alumno.Name" class="form-label"></label>
+        <input type="text" asp-for="alumno.Name" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="alumno.Surname" class="form-label"></label>
+        <input type="text" asp-for="alumno.Surname" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="alumno.Dni" class="form-label"></label>
+        <input type="text" asp-for="alumno.Dni" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="alumno.Nationality" class="form-label"></label>
+        <select asp-for="alumno.Nationality" class="form-control">
+            <option value="0">Argentina</option>
+            <option value="1">Paraguay</option>
+            <option value="2">Chile</option>
+            <option value="3">Brasil</option>
+            <option value="4">Bolivia</option>
+            <option value="5">Uruguay</option>
+        </select>
+    </div>
+    <div>
+        <label asp-for="alumno.CarreraId" class="form-label"></label>
+        <select asp-for="alumno.CarreraId" asp-items="@Model.carreras"  class="form-control"></select>
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-info">Guardar</button>
+    </div>
+
+
+
+
+
+</form>

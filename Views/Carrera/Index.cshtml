@@ -1,0 +1,40 @@
+@using Parcial1.ViewModels;
+@model CIndexViewModel
+@{
+
+}
+
+<div>
+    <div>
+        <h2 style="text-align: center;">Listado de carreras</h2>
+    </div>
+    <div>
+        <a asp-action="Create" asp-controller="Carrera" class="btn btn-primary">Crear</a>
+    </div>
+    <div>
+        <table class="table table">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(x => x.carreras.First().Name)</th>
+                    <th>@Html.DisplayNameFor(x => x.carreras.First().Turno)</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in @Model.carreras)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Turno</td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.CarreraId" class="btn btn-info">Detalle</a>
+                            <a asp-action="Edit" asp-route-id="@item.CarreraId" class="btn btn-primary">Modificar</a>
+                            <a asp-action="Delete" asp-route-id="@item.CarreraId" class="btn btn-danger">Borrar</a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

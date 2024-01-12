@@ -1,0 +1,28 @@
+@model Carrera
+@{
+
+}
+
+<div>
+    <div>
+        <h2 style="text-align: center;">Formulario para Agregar una Carrera</h2>
+    </div>
+    <div>
+        <form method="post" asp-action="Create">
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label"></label>
+                <input type="text" asp-for="Name" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label asp-for="Turno" class="form-label"></label>
+                <select asp-for="Turno" class="form-control">
+                    <option value="0">Mañana</option>
+                    <option value="1">Tarde</option>
+                    <option value="2">Noche</option>
+                </select>
+            
+                <button type="submit" class="btn btn-info">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>

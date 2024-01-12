@@ -1,0 +1,32 @@
+@using Parcial1.ViewModels;
+@model CDetailsViewModel
+@{
+
+}
+
+<div class="container">
+    <div class="mb-3">
+        <h2>Detalle de la carrera @Model.carrera.Name</h2>
+    </div>
+    <div class="mb-3">
+        <h3>@Html.DisplayNameFor(x => x.carrera.Name)</h3>
+        <span>@Model.carrera.Name</span>
+    </div>
+    <div class="mb-3">
+        <h3>@Html.DisplayNameFor(x => x.carrera.Turno)</h3>
+        <span>@Model.carrera.Turno</span>
+    </div>
+    <div class="mb-3">
+        <h3>Listado de Personas Anotadas a la carrera</h3>
+        <ul>
+            @foreach (var item in @Model.alumnos)
+            {
+                <li>@item</li>
+            }
+        </ul>
+    </div>
+    <div class="mb-3">
+        <a asp-action="Index" class="btn btn-info">Volver</a>
+        <a asp-action="Edit" asp-route-id="@Model.carrera.CarreraId" class="btn btn-primary">Modificar carrera</a>
+    </div>
+</div>
